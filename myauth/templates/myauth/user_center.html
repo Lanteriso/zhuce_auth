@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+</head>
+<body>
+        <a href="{% url 'myauth:主页' %}">主页</a>
+        <a href="{% url 'myauth:编辑个人信息' %}">编辑个人信息</a>
+        <a href="{% url 'myauth:修改密码' %}">修改密码</a>
+        <a href="{% url 'myauth:登出' %}">登出</a>
+
+        <div>
+            <p>{{ 用户.username }}</p>
+            <p>{{ 用户.password }}</p>
+            <p>{{ 用户.email }}</p>
+        </div>
+
+</body>
+</html>
