@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+<a href="{% url 'myauth:个人中心' %}">个人中心</a>
+<a href="{% url 'myauth:登出' %}">登出</a>
+
+{% else %}
+<a href="{% url 'myauth:登录' %}">登录</a>
+<a href="{% url 'myauth:注册' %}">注册</a>
+{% endif %}
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>个人中心</title>
+    <title>编辑个人信息</title>
 </head>
 <body>
         <a href="{% url 'myauth:主页' %}">主页</a>
@@ -10,12 +10,12 @@
         <a href="{% url 'myauth:修改密码' %}">修改密码</a>
         <a href="{% url 'myauth:登出' %}">登出</a>
 
-        <div>
-            <p>{{ 用户.username }}</p>
-            <p>{{ 用户.password }}</p>
-            <p>{{ 用户.email }}</p>
-            <!--<p>{{ 用户.Todo.thing }}</p>-->
-        </div>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ 编辑表单.as_p }}
+    <button type="submit">确定</button>
+</form>
+
 
 </body>
 </html>
